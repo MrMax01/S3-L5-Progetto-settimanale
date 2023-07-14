@@ -501,14 +501,16 @@ const isItPrime = (num) => {
   let result = true;
   if (num === 1) {
     result = true;
+  } else if (num < 0) {
+    result = false;
   } else {
     for (let i = 2; i < num; i++) {
       if (num % i === 0) {
         result = false;
-        break;
+        // break;
       }
     }
   }
   return result;
 };
-console.log(isItPrime(1));
+console.log(isItPrime(3));
