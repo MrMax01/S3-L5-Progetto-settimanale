@@ -373,7 +373,7 @@ console.log(searchByTitle("fsdfsfsdvxzxca"));
   "match" deve includere tutti i film dell'array "movies" fornito che contengono la stringa fornita all'interno del proprio titolo, mentre "unmatch" deve includere tutti i rimanenti.
 */
 const searchAndDivide = (str) => {
-  obj = {
+  const obj = {
     match: [],
     unmatch: [],
   };
