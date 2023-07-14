@@ -114,6 +114,9 @@ const isThisAnEmail = (email) => {
 };
 console.log(isThisAnEmail(emailMax));
 console.log(isThisAnEmail(pippo));
+/*
+regex source: https://www.w3resource.com/javascript/form/email-validation.php#:~:text=To%20get%20a%20valid%20email,%2Frfc3696%23page%2D5%20!
+ */
 /* ESERCIZIO 7
   Scrivi una funzione chiamata "whatDayIsIt" che ritorna il giorno della settimana corrente.
 */
