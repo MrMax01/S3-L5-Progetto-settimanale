@@ -273,10 +273,10 @@ console.log(deleteProp({ nome: "Massimo", cognome: "Mauro", ciboPref: "pizza" },
 /* ESERCIZIO 19
   Scrivi una funzione chiamata "removeIndex" che riceve un numero come parametro e ritorna l'array "movies" fornito privo dell'elemento nella posizione ricevuta come parametro.
 */
-const removeIndex = (num) => {
-  delete movies[num];
-  return movies;
-};
+// const removeIndex = (num) => {
+//   delete movies[num];
+//   return movies;
+// };
 
 // DOM (nota: gli elementi che selezionerai non si trovano realmente nella pagina)
 
