@@ -151,11 +151,29 @@ console.log(rollTheDices(4));
 /* ESERCIZIO 9
   Scrivi una funzione chiamata "howManyDays" che riceve una data come parametro e ritorna il numero di giorni trascorsi da tale data.
 */
+const howManyDays = (date) => {
+  const today = new Date();
 
+  let one_day = 1000 * 60 * 60 * 24;
+  /*C'è DA SPECIFICARE CHE SE IL RISULTATO è NEGATIVO VUOL DIRE CHE ABBIAMO INSERITO UNA DATA PASSATA E TI DICE QUANTI GIORNI SONO PASSATI AD OGGI.
+  SE INVECE, IL RISULTATO è POSITIVO SIGNIFACA CHE ABBIAMO INSERITO UNA DATA FUTURA E CI DIRà QUANTI GIORNI MANCANO PER ARRIVARE A QUELLA DATA INSERITA.
+   */
+  const result = Math.ceil((date.getTime() - today.getTime()) / one_day);
+  return result;
+};
+
+console.log(howManyDays(new Date("July 20, 2023 09:24:00")));
 /* ESERCIZIO 10
   Scrivi una funzione chiamata "isTodayMyBirthday" che deve ritornare true se oggi è il tuo compleanno, falso negli altri casi.
 */
-
+const myBirthday = new Date("March 11");
+const pippoBirthday = new Date("July 14");
+const isTodayMyBirthday = (date) => {
+  const today = new Date();
+  return today.getDate() === date.getDate() && today.getMonth() === date.getMonth();
+};
+console.log(isTodayMyBirthday(myBirthday));
+console.log(isTodayMyBirthday(pippoBirthday));
 // Arrays & Oggetti
 
 // NOTA: l'array "movies" usato in alcuni esercizi è definito alla fine di questo file
@@ -164,45 +182,108 @@ console.log(rollTheDices(4));
   Scrivi una funzione chiamata "deleteProp" che riceve un oggetto e una stringa come parametri; deve ritornare l'oggetto fornito dopo aver eliminato
   in esso la proprietà chiamata come la stringa passata come secondo parametro.
 */
-
+const deleteProp = (obj, str) => {
+  delete obj[str];
+  return obj;
+};
+console.log(deleteProp({ nome: "Massimo", cognome: "Mauro", ciboPref: "pizza" }, "ciboPref"));
 /* ESERCIZIO 12
   Scrivi una funzione chiamata "newestMovie" che trova il film più recente nell'array "movies" fornito.
 */
-
+// function newstMovie() {
+//   let result = "";
+//   let tmp = 0;
+//   for (let i = 0; i < movies.length; i++) {
+//     if (tmp < parseInt(movies[i].Year)) {
+//       tmp = parseInt(movies[i].Year);
+//       result = movies[i].Title;
+//     }
+//   }
+//   return result;
+// }
+// console.log(newstMovie());
 /* ESERCIZIO 13
   Scrivi una funzione chiamata countMovies che ritorna il numero di film contenuti nell'array "movies" fornito.
 */
+// const countMovies = () => {
+//   return movies.length;
+// };
+// console.log(countMovies());
 
 /* ESERCIZIO 14
   Scrivi una funzione chiamata "onlyTheYears" che crea un array con solamente gli anni di uscita dei film contenuti nell'array "movies" fornito.
 */
+// const onlyTheYears = () => {
+//   const arr = [];
+//   for (let i = 0; i < movies.length; i++) {
+//     arr.push(movies[i].Year);
+//   }
+//   return arr;
+// };
 
 /* ESERCIZIO 15
   Scrivi una funzione chiamata "onlyInLastMillennium" che ritorna solamente i film prodotto nel millennio scorso contenuti nell'array "movies" fornito.
 */
+// const onlyInLastMillennium = () => {
+//   const arr = [];
+//   for (let i = 0; i < movies.length; i++) {
+//     if (movies[i].Year > 2000) arr.push(movies[i].Title);
+//   }
+//   return arr;
+// };
 
 /* ESERCIZIO 16
   Scrivi una funzione chiamata "sumAllTheYears" che ritorna la somma di tutti gli anni in cui sono stati prodotti i film contenuti nell'array "movies" fornito.
 */
+// const sumAllTheYears = () => {
+//   sum = 0;
+//   for (let i = 0; i < movies.length; i++) {
+//     sum += movies[i].Year;
+//   }
+//   return sum;
+// };
 
 /* ESERCIZIO 17
   Scrivi una funzione chiamata "searchByTitle" che riceve una stringa come parametro e ritorna i film nell'array "movies" fornito che la contengono nel titolo.
 */
 
+// const searchByTitle = (str) => {
+//   let result = [];
+// for (let i = 0; i < movies.length; i++) {
+//   if (movies[i].Title.includes(str)) result.push(movies[i]);
+// }
+//   return result;
+// };
+
 /* ESERCIZIO 18
   Scrivi una funzione chiamata "searchAndDivide" che riceve una stringa come parametro e ritorna un oggetto contenente due array: "match" e "unmatch".
   "match" deve includere tutti i film dell'array "movies" fornito che contengono la stringa fornita all'interno del proprio titolo, mentre "unmatch" deve includere tutti i rimanenti.
 */
-
+// const searchAndDivide = (str) => {
+//   obj = {
+//     match: [],
+//     unmatch: [],
+//   };
+//   for (let i = 0; i < movies.length; i++) {
+//     if (movies[i].Title.includes(str)) obj.match.push(movies[i]);
+//     else obj.unmatch.push(movies[i]);
+//   }
+//   return obj;
+// };
 /* ESERCIZIO 19
   Scrivi una funzione chiamata "removeIndex" che riceve un numero come parametro e ritorna l'array "movies" fornito privo dell'elemento nella posizione ricevuta come parametro.
 */
+const removeIndex = (num) => {
+  delete movies[num];
+  return movies;
+};
 
 // DOM (nota: gli elementi che selezionerai non si trovano realmente nella pagina)
 
 /* ESERCIZIO 20
   Scrivi una funzione per selezionare l'elemento dotato di id "container" all'interno della pagina.
 */
+document.getElementById("container");
 
 /* ESERCIZIO 21
   Scrivi una funzione per selezionare ogni tag <td> all'interno della pagina.
